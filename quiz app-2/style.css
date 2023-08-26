@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    border: 1px solid #000;
+    width: clamp(300px, 600px, 900px);
+    position: relative;
+}
+
+.contain {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+}
+
+.header .timer {
+    background-color: rgba(0, 157, 255, 0.485);
+    padding: 0.25rem;
+    border-radius: 0.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+}
+
+.header .timer span {
+    margin-inline: 2px;
+    text-transform: capitalize;
+}
+
+.header .timer span:last-child {
+    background-color: #333;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 0.25rem;
+}
+
+.header .progress-bar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: width 200ms ease;
+}
+
+.header .progress-bar span {
+    position: absolute;
+    left: calc(0px - 15px);
+    width: 100%;
+    height: 2px;
+    background-color: #2bab2b;
+}
+
+.main {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+}
+
+.main .question {
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.main .options {
+    display: flex;
+    flex-direction: column;
+    align-content: space-evenly;
+    width: 500px;
+    gap: 1rem;
+}
+
+.main .options button {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 15px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid #0090ff;
+    border-radius: 0.25rem;
+    background-color: #0f80e331;
+    cursor: pointer;
+}
+
+.main .options button span:last-child {
+    font-size: 16px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+.main {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+    width: 100%;
+}
+
+.main .display-questions {
+    position: absolute;
+    transform: scale(0);
+    transform-origin: center center;
+    transition: all 500ms;
+}
+
+.main .intro {
+    transform: scale(1);
+    display: grid;
+    place-content: center;
+    font-size: 50px;
+    text-transform: capitalize;
+    font-family: 'Poppins', sans-serif;
+}
+
+.details {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.details .next-question button {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border: 1px solid #0090ff;
+    padding: 5px;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    background-color: #0090ff;
+    text-transform: capitalize;
+}
+
+.scoreboard {
+    position: absolute;
+    top: 50%;
+    transform: translate(50%, -50%);
+    transform-origin: center center;
+    background-color: #2bab2b;
+    width: 280px;
+    height: 250px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    border-radius: 0.25rem;
+    z-index: 11;
+    box-shadow: 0px 10px 30px 5px #beb6b6;
+    display: none;
+}
+
+.scoreboard .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.scoreboard .content span:first-child {
+    border: 3px solid #1b8cd1;;
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 40px;
+}
+
+.scoreboard .content .remarks {
+    padding: 10px;
+    margin-top: 10px;
+    text-transform: capitalize;
+    font-size: 18px;
+    text-align: center;
+}
+
+.scoreboard .content .remarks .points {
+    padding: 5px;
+}
